@@ -25,10 +25,19 @@
   word-wrap: break-word;
 }
 
+.messages-container {
+  overflow-y: auto; 
+  max-height: 560px;
+}
+
 .icon {
   padding: 0.5em;
   color: #a5a5a5;
   font-size: 1.10em;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 .icon:hover {

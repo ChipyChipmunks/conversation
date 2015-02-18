@@ -1,7 +1,10 @@
 <template name='layout'>
   <div style='padding-bottom:2em'></div>
   <div class='col-md-3'>{{> side_nav}}</div>
-  <div class='col-md-8'>{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> enter_message}}</div>
+  <div class='col-md-8'>
+    <div class='messages-container'>{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}</div>
+    <div>{{> enter_message}}</div>
+  </div>
 </template>
 
 <template name='enter_message'>
