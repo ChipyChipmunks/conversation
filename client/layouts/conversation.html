@@ -1,0 +1,97 @@
+<template name='layout'>
+  <div style='padding-bottom:2em'></div>
+  <div class='col-md-3'>{{> side_nav}}</div>
+  <div class='col-md-8'>{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> enter_message}}</div>
+</template>
+
+<template name='enter_message'>
+  <center><textarea id='enter_message' placeholder='Enter Message'></textarea></center>
+</template>
+
+<template name='side_nav'>
+  <div class="row">
+    <div class="side-menu">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <div class="brand-wrapper">
+            <button type="button" class="navbar-toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="brand-name-wrapper">
+              <a class="navbar-brand" href="#">
+                Brand
+              </a>
+            </div>
+            <a data-toggle="collapse" href="#search" class="btn btn-default" id="search-trigger">
+              <span class="glyphicon glyphicon-search"></span>
+            </a>
+            <div id="search" class="panel-collapse collapse">
+              <div class="panel-body">
+                <form class="navbar-form" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-ok"></span></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="side-menu-container">
+          <ul class="nav navbar-nav">
+            <li><a href="#"><span class="glyphicon glyphicon-send"></span> Link</a></li>
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Link</a></li>
+            <li class="panel panel-default" id="dropdown">
+              <a data-toggle="collapse" href="#dropdown-lvl1">
+                <span class="glyphicon glyphicon-user"></span> Sub Level <span class="caret"></span>
+              </a>
+              <div id="dropdown-lvl1" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <ul class="nav navbar-nav">
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="panel panel-default" id="dropdown">
+                      <a data-toggle="collapse" href="#dropdown-lvl2">
+                        <span class="glyphicon glyphicon-off"></span> Sub Level <span class="caret"></span>
+                      </a>
+                      <div id="dropdown-lvl2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <ul class="nav navbar-nav">
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-signal"></span>Link</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</template>
+
+<template name='message'>
+  <div class='outer'>
+    <div class='col-md-2 message-left'><center><h1>LO</h1></center></div>
+    <div class='col-md-8 message-center' style='padding:1em; height:100%'>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+    </div>
+    <div class='col-md-2 message-right'>
+      <div class='col-md-3'><i class='fa fa-cogs icon' style='color:#d3d3d3'></i></div>
+      <div class='col-md-3'><i class='fa fa-coffee icon' style='color:#f4a460'></i></div>
+      <div class='col-md-3'><i class='fa fa-car icon' style='color:lightblue'></i></div>
+      <div class='col-md-3'><i class='fa fa-trash-o icon' style='color:red'></i></div>
+    </div>
+  </div>
+</template>
