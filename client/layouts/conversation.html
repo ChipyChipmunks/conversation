@@ -1,14 +1,80 @@
 <template name='layout'>
-  <div style='padding-bottom:2em'></div>
+<!--  <div class='nav nav-bar'>{{> nav_bar}}</div>-->
   <div class='col-md-3'>{{> side_nav}}</div>
   <div class='col-md-8'>
-    <div class='messages-container'>{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}{{> message}}</div>
-    <div>{{> enter_message}}</div>
+    <div class='messages_container'>{{#each messages}} {{> message}} {{/each}}</div>
+    <div>{{> quickForm collection="Messages" id="insert_messages_form" type="insert"}}</div>
   </div>
 </template>
 
+<template name='nav_bar'>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown mega-dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>				
+            <div class="dropdown-menu mega-dropdown-menu">
+              <div class="container-fluid">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div class="tab-pane active" id="men">
+                    <ul class="nav-list list-inline">
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
+                <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
+                <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
+                <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
+              </ul>                    
+            </div>				
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</template>
+
 <template name='enter_message'>
-  <center><textarea id='enter_message' placeholder='Enter Message'></textarea></center>
+  <form id='message_form'>
+    <textarea id='messagebox' cols="40" rows="4" style="width:100%" class="message_box" placeholder="Enter Message" autocomplete="off"></textarea>
+  </form>
 </template>
 
 <template name='side_nav'>
@@ -25,7 +91,7 @@
             </button>
             <div class="brand-name-wrapper">
               <a class="navbar-brand" href="#">
-                Brand
+                Conversation
               </a>
             </div>
             <a data-toggle="collapse" href="#search" class="btn btn-default" id="search-trigger">
@@ -60,7 +126,7 @@
                     <li><a href="#">Link</a></li>
                     <li class="panel panel-default" id="dropdown">
                       <a data-toggle="collapse" href="#dropdown-lvl2">
-                        <span class="glyphicon glyphicon-off"></span> Sub Level <span class="caret"></span>
+                        <span class="glyphicon glyphicon-ok"></span> Sub Level <span class="caret"></span>
                       </a>
                       <div id="dropdown-lvl2" class="panel-collapse collapse">
                         <div class="panel-body">
@@ -77,6 +143,7 @@
               </div>
             </li>
             <li><a href="#"><span class="glyphicon glyphicon-signal"></span>Link</a></li>
+            <li><a href='#'><span class='glyphicon glyphicon-off trash'></span>Logout</a></li>
           </ul>
         </div>
       </nav>
@@ -88,13 +155,13 @@
   <div class='outer'>
     <div class='col-md-2 message-left'><center><h1>LO</h1></center></div>
     <div class='col-md-8 message-center' style='padding:1em; height:100%'>
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+      {{message}}
     </div>
     <div class='col-md-2 message-right'>
-      <div class='col-md-3'><i class='fa fa-cogs icon' style='color:#d3d3d3'></i></div>
-      <div class='col-md-3'><i class='fa fa-coffee icon' style='color:#f4a460'></i></div>
-      <div class='col-md-3'><i class='fa fa-car icon' style='color:lightblue'></i></div>
-      <div class='col-md-3'><i class='fa fa-trash-o icon' style='color:red'></i></div>
+      <div class='col-md-3'><i class='fa fa-cogs icon cogs'></i></div>
+      <div class='col-md-3'><i class='fa fa-coffee icon coffee'></i></div>
+      <div class='col-md-3'><i class='fa fa-car icon car'></i></div>
+      <div class='col-md-3'><i class='fa fa-trash-o icon trash'></i></div>
     </div>
   </div>
 </template>

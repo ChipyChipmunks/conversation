@@ -12,3 +12,5 @@ iron:router
 coffeescript
 dbarrett:dropzonejs
 fortawesome:fontawesome
+aldeed:autoform
+aldeed:collection2

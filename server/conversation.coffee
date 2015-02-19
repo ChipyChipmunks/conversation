@@ -1,1 +1,1 @@
-#Meteor.subscribe 'messages'
+Meteor.publish 'messages', -> Messages.find()

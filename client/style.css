@@ -25,9 +25,10 @@
   word-wrap: break-word;
 }
 
-.messages-container {
+.messages_container {
   overflow-y: auto; 
-  max-height: 560px;
+  max-height: 572px;
+  height: 100%;
 }
 
 .icon {
@@ -37,12 +38,17 @@
 }
 
 ::-webkit-scrollbar { 
-    display: none; 
+  display: none; 
 }
 
 .icon:hover {
-  font-size: 12.50; 
+  font-size: 1.30em;
 }
+
+.cogs {color: #d3d3d3;}
+.trash {color: red;}
+.coffee {color: #f4a460;}
+.car {color: lightblue;}
 
 .message-right {
   padding-left: 0.20em;
