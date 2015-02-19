@@ -20,3 +20,7 @@ Template.layout.events(
 Template.layout.helpers ( 
   messages : -> Messages.find().fetch()
 )
+
+Template.message.events(
+  'click .trash' : -> (Messages.remove(this._id)) 
+)
